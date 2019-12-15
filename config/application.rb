@@ -17,7 +17,7 @@ module Skedge
     # the framework and any gems in your application.
     config.autoload_paths += %W(#{config.root}/lib)
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.assets.precompile += %w( .svg .eot .woff .ttf .scss )
     config.assets.check_precompiled_asset = false
 
   end
