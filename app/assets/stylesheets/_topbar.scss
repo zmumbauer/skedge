@@ -1,20 +1,36 @@
+nav {
+	padding: 20px 40px;
+}
 .nav-logo-text {
 	font-family: $primary-font;
 	font-size: 2em;
+	display: inline-block;
+	margin-right: 40px;
+	float: left;
 }
 
 .desktop-nav {
 	height: 100px;
 	width: 100%;
-	padding: 20px;
 	box-sizing: border-box;
 	.nav-left {
+		padding-top: 10px;
 		display: inline-block;
 		float: left;
 	} .nav-right {
+		padding-top: 10px;
 		display: inline-block;
 		float: right;
+	} & * > .nav-item {
+		margin-right: 15px;
 	}
+} .mobile-nav-toggle {
+	display: none;
+	height: 100px;
+	width: 100px;
+	position: fixed;
+	top: 20px;
+	right: 20px;
 }
 
 .alert-bar {

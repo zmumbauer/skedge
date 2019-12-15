@@ -1,8 +1,22 @@
 <!-- Main Navigation -->
 <nav>
-  <div class="nav-logo-text">Skedge</div>
   <div class="desktop-nav">
-    <%= link_to 'Home', root_path %>
+    <%= link_to root_path do %>
+      <div class="nav-logo-text">Skedge</div>
+      <% end %>
+    <div class="nav-left">
+      <%= link_to 'Home', root_path, class: 'nav-item' %>
+      <%= link_to 'About', root_path, class: 'nav-item' %>
+      <%= link_to 'Contact', root_path, class: 'nav-item' %>
+    </div>
+    <div class="nav-right">
+      <% if current_user %>
+      <%= link_to 'Sign out', destroy_user_session_path %>
+      <% else %>
+      <%= link_to 'Sign In', new_user_session_path %> or
+      <%= link_to 'Sign Up', new_user_registration_path %>
+      <% end %>
+    </div>
   </div>
 
   <div class="mobile-nav">
