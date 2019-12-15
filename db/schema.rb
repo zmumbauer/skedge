@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_035527) do
+ActiveRecord::Schema.define(version: 2019_12_15_064521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_035527) do
     t.text "logo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_organizations_on_user_id"
   end
 
   create_table "swap_requests", force: :cascade do |t|
@@ -55,6 +53,8 @@ ActiveRecord::Schema.define(version: 2019_12_15_035527) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "status", default: 0
     t.integer "kind", default: 0
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_timeperiods_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,11 +79,11 @@ ActiveRecord::Schema.define(version: 2019_12_15_035527) do
     t.string "phone_number"
     t.decimal "hourly_rate"
     t.string "roles"
-    t.bigint "timeperiod_id"
+    t.bigint "organization_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["timeperiod_id"], name: "index_users_on_timeperiod_id"
   end
 
 end

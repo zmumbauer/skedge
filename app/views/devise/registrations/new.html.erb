@@ -37,19 +37,7 @@
       <%= f.telephone_field :phone_number, autocomplete: "phone" %>
     </div>
 
-    <%= f.fields_for :organization do |s| %>
-    <div class="heading">Organization Information</div>
-
-    <div class="input-group">
-      <%= s.label :title, class: 'form-field' %>
-      <%= s.text_field :title, class: 'form-field', placeholder: "Something Something Artwork" %>
-    </div>
-
-    <div class="input-group">
-      <%= s.label :picture, class: 'form-field' %>
-      <%= s.file_field :picture, class: 'form-field' %>
-    </div>
-    <% end %>
+    <%= f.hidden_field :organization_id, value: params[:organization_id] %>
 
     <div class="actions">
       <%= f.submit "Sign up", class: 'primary-button' %>
