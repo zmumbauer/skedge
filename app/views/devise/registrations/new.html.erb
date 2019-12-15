@@ -1,6 +1,6 @@
 <div class="page-container">
   <div class="padded-container secondary">
-    <div class="heading">Sign Up</div>
+    <div class="heading">User Information</div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -36,6 +36,20 @@
       <%= f.label :phone_number %><br />
       <%= f.telephone_field :phone_number, autofocus: true, autocomplete: "phone" %>
     </div>
+
+    <%= f.fields_for :organization do |s| %>
+    <div class="heading">Organization Information</div>
+
+    <div class="input-group">
+      <%= s.label :title, class: 'form-field' %>
+      <%= s.text_field :title, class: 'form-field', placeholder: "Something Something Artwork" %>
+    </div>
+
+    <div class="input-group">
+      <%= s.label :picture, class: 'form-field' %>
+      <%= s.file_field :picture, class: 'form-field' %>
+    </div>
+    <% end %>
 
     <div class="actions">
       <%= f.submit "Sign up", class: 'primary-button' %>
