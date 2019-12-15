@@ -1,5 +1,8 @@
-@import 'resets.scss';
-@import 'colors.scss';
-@import 'typography.scss';
-@import 'containers.scss';
-@import 'main.scss';
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import './resets';
+@import './colors';
+@import './typography';
+@import './palletes';
+@import './containers';
+@import './topbar';
+@import './main';

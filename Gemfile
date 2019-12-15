@@ -32,6 +32,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'rack-livereload'
 end
 
 group :development do
@@ -41,9 +44,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-end
+    # # Pry
+    gem 'pry', '~> 0.12.2'
+  end
 
-group :test do
+  group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
@@ -57,4 +62,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # User Defined Gems
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
+# Role based authentication
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+
+# Vendor Prefixing
+gem 'autoprefixer-rails', '~> 9.7', '>= 9.7.3'

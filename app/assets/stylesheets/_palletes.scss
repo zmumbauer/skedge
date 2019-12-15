@@ -1,0 +1,22 @@
+.primary {
+	background-color: $red;
+	color: $white;
+	&.inverse {
+		background-color: $white;
+		color: $red;
+	}
+} .secondary {
+	background-color: $gold;
+	color: $white;
+	&.inverse {
+		background-color: $white;
+		color: $gold;
+	}
+} .tertiary {
+	background-color: $grey;
+	color: $white;
+	&.inverse {
+		background-color: $white;
+		color: $grey;
+	}
+}

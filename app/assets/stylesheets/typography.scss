@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Montserrat&display=swap');
+
+$primary-font: 'Comfortaa', cursive;
+$secondary-font: 'Montserrat', sans-serif;
+
+// General Text
+
+body {
+	font-size: 1em;
+}
+
+.heading {
+	font-family: $primary-font;
+	font-size: 2em;
+} .sub-heading {
+	font-family: $primary-font;
+	font-size: 1.5em;
+	text-transform: lowercase;
+	font-variant: small-caps;
+} .body {
+	font-family: $secondary-font;
+	font-size: 1em;
+}
+
+// Links
+a {
+	color: inherit;
+	&:hover {
+		color: inherit;
+		cursor: pointer;
+		font-style: italic;
+		text-decoration: none;
+	}
+}

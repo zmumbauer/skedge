@@ -1,2 +1,23 @@
 <!-- Main Navigation -->
-<!-- Error Handling -->
+<nav>
+  <div class="nav-logo-text">Skedge</div>
+  <div class="desktop-nav">
+    <%= link_to 'Home', root_path %>
+  </div>
+
+  <div class="mobile-nav">
+
+  </div>
+
+  <div class="mobile-nav-toggle">
+
+  </div>
+  <!-- Error Handling -->
+  <div class="alert-bar">
+    <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name %>">
+      <%= msg %>
+    </div>
+    <% end %>
+  </div>
+</nav>

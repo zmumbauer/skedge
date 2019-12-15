@@ -1,0 +1,22 @@
+.nav-logo-text {
+	font-family: $primary-font;
+	font-size: 2em;
+}
+
+.desktop-nav {
+	height: 100px;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	.nav-left {
+		display: inline-block;
+		float: left;
+	} .nav-right {
+		display: inline-block;
+		float: right;
+	}
+}
+
+.alert-bar {
+	font-size: .5em;
+}

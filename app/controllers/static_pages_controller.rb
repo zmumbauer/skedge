@@ -5,4 +5,7 @@ class StaticPagesController < ApplicationController
 
   def home  
   end
+
+  def typography_sample
+  end
 end
