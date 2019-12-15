@@ -1,6 +1,35 @@
 <div class="page-container">
-  <div class="padded-container primary">
+  <div class="padded-container tertiary inverse">
     <div class="heading center">Skedge</div>
     <div class="sub-heading center">The best scheduling utility. Period.</div>
+  </div>
+  <div class="padded-container secondary">
+    <div class="heading">Let's get to know your organization</div>
+    <%= form_for @organization do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, placeholder: "Joe's Donuts" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description, placeholder: "What's your organization's purpose? What do you want your members to strive for?" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :logo %>
+      <%= f.text_field :logo, placeholder: "A link to your organization logo" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone_number %><br />
+      <%= f.telephone_field :phone_number, autocomplete: "phone", placeholder: "What's a good number to reach you? No dashes or parentheses, just numbers please." %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Join Skedge", class: "primary-button" %>
+    </div>
+
+    <% end %>
   </div>
 </div>

@@ -16,6 +16,8 @@
 		&:focus {
 			outline: none;
 		}
+	} textarea {
+		@extend input;
 	}
 }
 

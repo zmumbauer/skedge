@@ -2,6 +2,11 @@ class OrganizationsController < ApplicationController
 
   def create
     @organization = Organization.new(organization_params)
+    if @organization.save
+      redirect_to welcome_page_path, success: "Welcome to Skedge!"
+    else
+      render 'static_pages/landing_page', danger: "Oh no! Something went wrong."
+    end
   end
 
   def update
