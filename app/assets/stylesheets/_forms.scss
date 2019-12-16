@@ -17,6 +17,9 @@
 		margin-bottom: 20px;
 		&:focus {
 			outline: none;
+		} &:disabled, &:read-only {
+			background-color: $grey;
+			color: white;
 		}
 	} textarea {
 		@extend input;
@@ -39,5 +42,15 @@
 		background-color: $transparent;
 		color: $red;
 		border: 1px solid $red;
+	}
+} .secondary-button {
+	@extend .primary-button;
+	background-color: $gold;
+	color: $white;
+	border-color: $gold;
+	&:hover {
+		background-color: $white;
+		color: $gold;
+		border-color: $white;
 	}
 }

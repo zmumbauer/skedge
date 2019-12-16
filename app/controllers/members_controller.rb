@@ -3,14 +3,7 @@ class MembersController < ApplicationController
 
   def index
     @members = current_user.organization.members
-  end
-
-  def update
-
-  end
-
-  def edit
-
+    @new_member = OrganizationToken.new
   end
 
 end

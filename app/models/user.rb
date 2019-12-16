@@ -7,10 +7,10 @@ class User < ApplicationRecord
   petergate(roles: [:ultimate_manager, :business_manager], multiple: false)                                      ##
   ############################################################################################ 
   # Include default devise modules. Others available are:
-  # :lockable, and :omniauthable
+  # :confirmable, :lockable, and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :trackable, :timeoutable
+         :trackable, :timeoutable
 
   # Relations
 

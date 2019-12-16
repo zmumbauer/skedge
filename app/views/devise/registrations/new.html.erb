@@ -1,6 +1,7 @@
 <div class="page-container">
   <div class="padded-container secondary">
-    <div class="heading">User Information</div>
+    <div class="heading">Welcome to <%= @organization.name %>!</div>
+    <div class="sub-heading">We just need some information to get started</div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -16,7 +17,12 @@
 
     <div class="field">
       <%= f.label :email %>
+      <% if params.has_key?(:email) %>
+      <%= f.email_field :email, autocomplete: "email", readonly: true, value: "#{params.has_key?(:email) ? params[:email] : ''}", tabIndex: -1 %>
+      <% else %>
       <%= f.email_field :email, autocomplete: "email" %>
+      <% end %>
+
     </div>
 
     <div class="field">

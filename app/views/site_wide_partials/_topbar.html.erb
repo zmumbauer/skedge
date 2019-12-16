@@ -15,9 +15,11 @@
       <%= link_to 'Create a Shift', new_timeperiod_path, class: 'nav-item' %>
       <%= link_to 'Manage Swaps', swap_requests_path, class: 'nav-item' %>
       <%= link_to 'View Schedule', timeperiods_path, class: 'nav-item' %>
+      <%= link_to 'Your Account', edit_user_registration_path(current_user), class: 'nav-item' %>
       <% elsif logged_in?(:user) %>
       <%= link_to 'View Schedule', timeperiods_path, class: 'nav-item' %>
       <%= link_to 'Pick Up Shifts', swap_requests_path, class: 'nav-item' %>
+      <%= link_to 'Your Account', edit_user_registration_path(current_user), class: 'nav-item' %>
       <% end %>
     </div>
     <div class="nav-right">

@@ -5,15 +5,32 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    if params[:invite_token]
+      @token = OrganizationToken.find_by(token: params[:invite_token])
+      if @token.valid?
+        @organization = Organization.find(@token.organization_id)
+        params[:organization_id] = @organization.id
+      else
+        redirect_to root_path, danger: "Token has expired, ask your manager to reinvite you."
+        return
+      end
+    elsif params[:organization_id]
+     @organization = Organization.find(params[:organization_id])
+   else
+    redirect_to root_path, danger: "Something went wrong"
+    return
+  end
+
+  super
+end
 
   # POST /resource
   def create
     @organization = Organization.find(params[:user][:organization_id])
     super
-    if @organization.users.count == 1
+    OrganizationToken.find_by_email(resource.email).expire
+    if @organization.members.count == 1
       resource.roles=([:business_manager])
       resource.save
     end

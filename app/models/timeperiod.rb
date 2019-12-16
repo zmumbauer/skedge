@@ -17,7 +17,10 @@ class Timeperiod < ApplicationRecord
     if self.start_time.respond_to?(:strftime) && self.end_time.respond_to?(:strftime)
       unless self.start_time.to_date.future?
         errors.add(:start_time, "must be in the future")
-        errors.add(:end_time, "must be in the future")
+      else
+        unless self.start_time.before?(self.end_time)
+          errors.add(:start_time, "cannot take place after end time")
+        end
       end
     else
       errors.add(:start_time, "must be a date")

@@ -1,5 +1,9 @@
 <div class="page-container">
   <div class="padded-container tertiary">
+    <div class="heading">Your Upcoming Shifts</div>
+    <% if @timeperiods.count == 0 %>
+    <div class="heading">You have nothing on your schedule</div>
+    <% end %>
     <% @timeperiods.each do |this| %>
     <%= link_to timeperiod_path(this) do %>
     <div class="timecard">

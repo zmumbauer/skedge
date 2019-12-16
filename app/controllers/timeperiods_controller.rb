@@ -6,8 +6,7 @@ class TimeperiodsController < ApplicationController
 
   def create
     @timeperiod = Timeperiod.new(timeperiod_params)
-
-    if @timeperiod.save!
+    if @timeperiod.save
       redirect_to timeperiods_path, success: "Shift successfully created"
     else
       render 'new', danger: "Timeperiod could not be created."
@@ -19,7 +18,7 @@ class TimeperiodsController < ApplicationController
     if logged_in?(:business_manager)
       @timeperiods = current_user.organization.timeperiods
     else
-      @timeperiod = current_user.timeperiods
+      @timeperiods = current_user.timeperiods
     end
   end
 

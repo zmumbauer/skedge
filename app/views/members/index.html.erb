@@ -1,8 +1,21 @@
 <div class="page-container">
-  <div class="padded-container">
+  <div class="padded-container secondary">
+    <div class="heading"><%= current_user.organization.name %> Member List</div>
     <% @members.each do |this| %>
     <div class="timecard">
       <%= this.full_name %>
+    </div>
+    <% end %>
+  </div>
+  <div class="padded-container primary">
+    <div class="sub-heading">Add a New Member</div>
+    <%= form_for @new_member do |f| %>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Invite member", class: "secondary-button" %>
     </div>
     <% end %>
   </div>
