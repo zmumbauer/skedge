@@ -8,6 +8,7 @@ class Timeperiod < ApplicationRecord
 
   validates :start_time, presence: true
   validates :end_time, presence: true
+  validates :start_time, :end_time, overlap: { scope: "user_id" }
 
   validate :date_is_correct?, on: :create
 

@@ -29,7 +29,7 @@ end
   def create
     @organization = Organization.find(params[:user][:organization_id])
     super
-    OrganizationToken.find_by_email(resource.email).expire
+    OrganizationToken.find_by_email(resource.email).expire if !OrganizationToken.find_by_email(resource.email).nil?
     if @organization.members.count == 1
       resource.roles=([:business_manager])
       resource.save

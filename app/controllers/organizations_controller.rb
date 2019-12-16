@@ -1,5 +1,5 @@
 class OrganizationsController < ApplicationController 
-  access business_manager: :all
+  access all: { except: [ :edit, :update ] }, business_manager: :all
   def create
     @organization = Organization.new(organization_params)
     if @organization.save

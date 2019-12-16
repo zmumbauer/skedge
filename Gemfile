@@ -67,3 +67,6 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 
 # Vendor Prefixing
 gem 'autoprefixer-rails', '~> 9.7', '>= 9.7.3'
+
+# Time overlaps
+gem 'validates_overlap', '~> 1.0'

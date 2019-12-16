@@ -1,0 +1,8 @@
+<% if !errors.empty? %>
+<div class="padded-container primary error-box" style="margin-bottom: 20px;">
+  <div class="heading">Oh no! There was an issue:</div>
+  <% errors.each do |this| %>
+  <div class="error"><%= this %></div>
+  <% end %>
+</div>
+<% end %>

@@ -6,6 +6,7 @@
   <div class="padded-container secondary">
     <div class="heading">Let's get to know your organization</div>
     <%= form_for @organization do |f| %>
+    <%= render 'site_wide_partials/error_container', errors: @organization.errors.full_messages %>
     <div class="field">
       <%= f.label :name %>
       <%= f.text_field :name, autofocus: true, placeholder: "Joe's Donuts" %>
@@ -16,10 +17,10 @@
       <%= f.text_area :description, placeholder: "What's your organization's purpose? What do you want your members to strive for?" %>
     </div>
 
-    <div class="field">
-      <%= f.label :logo %>
-      <%= f.text_field :logo, placeholder: "A link to your organization logo" %>
-    </div>
+    <!-- <div class="field">
+      <%#= f.label :logo %>
+      <%#= f.text_field :logo, placeholder: "A link to your organization logo" %>
+    </div> -->
 
     <div class="field">
       <%= f.label :phone_number %><br />

@@ -7,18 +7,18 @@ class SwapRequestsController < ApplicationController
 
   def index
     if logged_in?(:business_manager)
-      @swap_requests = SwapRequest.all
+      @swap_requests = current_organization.swap_requests
     else
       @swap_requests = SwapRequest.submitted
     end
   end
 
   def create
-    @swap_request = SwapRequest.new(swap_request_params)
+    @swap_request = current_organization.swap_requests.new(swap_request_params)
     @swap_request.requesting_user_id = current_user.id
     
 
-    if @swap_request.save
+    if @swap_request.save!
       redirect_to swap_requests_path, success: "Swap request submitted"
     else
       redirect_to timeperiod_path(Timeperiod.find(@swap_request.timeperiod_id))

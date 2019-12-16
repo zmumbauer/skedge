@@ -1,6 +1,7 @@
 <div class="page-container">
   <div class="padded-container">
     <div class="heading">Create a shift</div>
+    <%= render 'site_wide_partials/error_container', errors: @timeperiod.errors.full_messages %>
     <%= form_for @timeperiod do |f| %>
     <div class="field">
       <%= f.label :start_time %><br>
@@ -19,7 +20,7 @@
 
     <div class="field">
       <%= f.label :user %><br>
-      <%= f.select :user_id, User.all.map {|user| [user.first_name+" "+user.last_name, user.id]}, {}, { class: 'form-field' } %>
+      <%= f.select :user_id, current_user.organization.members.all.map {|user| [user.first_name+" "+user.last_name, user.id]}, {}, { class: 'form-field' } %>
     </div>
 
   <div class="actions">

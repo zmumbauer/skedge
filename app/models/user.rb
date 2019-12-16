@@ -21,7 +21,8 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true, length: { minimum: 2, maximum: 30}
   validates :last_name, presence: true, length: { minimum: 2, maximum: 40}
-  validates :phone_number, presence: true, numericality: { only_integer: true }
+  validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" },
+                          length: { minimum: 5, maximum: 15 }, presence: true
 
   # TODO: add precision to decimal hourly rate column
 
