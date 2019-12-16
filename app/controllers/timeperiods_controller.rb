@@ -17,7 +17,7 @@ class TimeperiodsController < ApplicationController
 
   def index
     if logged_in?(:business_manager)
-      @timeperiods = Timeperiod.all
+      @timeperiods = current_user.organization.timeperiods
     else
       @timeperiod = current_user.timeperiods
     end

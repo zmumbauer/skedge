@@ -4,7 +4,7 @@
     <%= link_to timeperiod_path(this) do %>
     <div class="timecard">
       <% if logged_in?(:business_manager) %>
-      <div class="body"><%= this.full_name %></div>
+      <div class="body"><%= this.user.full_name %></div>
       <% end %>
       <div class="body"><%= this.start_time.strftime("%b %e") %></div>
       <div class="body"><%= this.start_time.strftime("%l:%M%P") %> — <%= this.end_time.strftime("%l:%M%P") %></div>

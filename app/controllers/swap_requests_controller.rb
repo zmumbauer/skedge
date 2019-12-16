@@ -2,7 +2,7 @@ class SwapRequestsController < ApplicationController
 
 
   def show
-
+    @swap_request = SwapRequest.find(params[:id])
   end
 
   def index

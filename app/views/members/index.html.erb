@@ -1,0 +1,9 @@
+<div class="page-container">
+  <div class="padded-container">
+    <% @members.each do |this| %>
+    <div class="timecard">
+      <%= this.full_name %>
+    </div>
+    <% end %>
+  </div>
+</div>

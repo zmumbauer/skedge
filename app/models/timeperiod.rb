@@ -1,5 +1,6 @@
 class Timeperiod < ApplicationRecord
   belongs_to :user
+  has_many :organization, through: :user
 
   enum kind: { unavailable: 0, template: 1, shift: 2 }
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :organizations, only: [ :create, :update, :edit ]
   resources :timeperiods, only: [ :create, :edit, :new, :update, :destroy, :index, :show ]
   resources :swap_requests, only: [ :create, :edit, :new, :update, :index, :show ]
+  get 'members', to: 'members#index'
 
   # Organizations
   get 'welcome_to_skedge/:id', to: 'organizations#welcome', as: 'welcome'
