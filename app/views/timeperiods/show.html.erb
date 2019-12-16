@@ -1,0 +1,17 @@
+<div class="page-container">
+  <div class="padded-container">
+    <div class="heading"><%= @timeperiod.start_time.strftime("%b %e") %></div>
+    <div class="heading"><%= @timeperiod.start_time.strftime("%l:%M%P") %> — <%= @timeperiod.end_time.strftime("%l:%M%P") %></div>
+    <%= form_for @swap_request do |f| %>
+
+    <%= f.hidden_field :timeperiod_id, value: params[:id] %>
+
+    <div class="actions">
+      <%= f.submit "I can't make it", class: 'primary-button' %>
+    </div>
+
+    <% end %>
+  </div>
+</div>
+
+

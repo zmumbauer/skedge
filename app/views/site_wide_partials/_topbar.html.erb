@@ -2,12 +2,22 @@
 <nav>
   <div class="desktop-nav">
     <%= link_to root_path do %>
-      <div class="nav-logo-text">Skedge</div>
-      <% end %>
+    <div class="nav-logo-text">Skedge</div>
+    <% end %>
     <div class="nav-left">
+      <% if !current_user %>
       <%= link_to 'Home', root_path, class: 'nav-item' %>
       <%= link_to 'About', root_path, class: 'nav-item' %>
       <%= link_to 'Contact', root_path, class: 'nav-item' %>
+      <% elsif logged_in?(:business_manager) %>
+      <%= link_to 'Organization', edit_organization_path(current_user.organization), class: 'nav-item' %>
+      <%= link_to 'Manage members', edit_organization_path(current_user.organization), class: 'nav-item' %>
+      <%= link_to 'Create a Shift', new_timeperiod_path, class: 'nav-item' %>
+      <%= link_to 'Manage Swaps', edit_organization_path(current_user.organization), class: 'nav-item' %>
+      <%= link_to 'View Schedule', timeperiods_path, class: 'nav-item' %>
+      <% elsif logged_in?(:user) %>
+      <%= link_to 'View Schedule', timeperiods_path, class: 'nav-item' %>
+      <% end %>
     </div>
     <div class="nav-right">
       <% if current_user %>

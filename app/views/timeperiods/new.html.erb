@@ -1,0 +1,30 @@
+<div class="page-container">
+  <div class="padded-container">
+    <div class="heading">Create a shift</div>
+    <%= form_for @timeperiod do |f| %>
+    <div class="field">
+      <%= f.label :start_time %><br>
+      <%= f.datetime_select :start_time %>
+    </div>
+
+    <div class="field">
+      <%= f.label :end_time %><br>
+      <%= f.datetime_select :end_time %>
+    </div>
+
+    <div class="field">
+      <%= f.label :kind %><br>
+      <%= f.select :kind, Timeperiod.kinds.keys.map {|kind| [kind.titleize, kind]}, {}, { class: 'form-field' } %>
+    </div>
+
+    <div class="field">
+      <%= f.label :user %><br>
+      <%= f.select :user_id, User.all.map {|user| [user.first_name+" "+user.last_name, user.id]}, {}, { class: 'form-field' } %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit "Create Shift", class: "primary-button" %>
+  </div>
+    <% end %>
+  </div>
+</div>

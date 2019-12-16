@@ -10,7 +10,17 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  def edit
+    @organization = Organization.find(params[:id])
+  end
+
   def update
+    @organization = Organization.find(param[:id])
+    if @organization.update(organization_params)
+      redirect_to organization_path, success: "#{@organization.name} updated successfully!"
+    else
+      render 'edit', danger: "Could not update #{@organization.name}!"
+    end
   end
 
   def welcome

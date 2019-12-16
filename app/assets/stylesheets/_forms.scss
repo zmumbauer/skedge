@@ -1,8 +1,10 @@
 .field {
+	margin-bottom: 20px;
 	label {
 		font-family: $secondary-font;
 		text-transform: lowercase;
 		font-variant: small-caps;
+		margin-bottom: 0px;
 	} input, input[type='text'], input[type='email'], input[type='password'], input[type='tel'] {
 		border: none;
 		background-color: $white;

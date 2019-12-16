@@ -36,4 +36,8 @@ nav {
 .alert-bar {
 	font-size: 1em;
 	width: 100%;
+	& > .alert-notice {
+		background-color: $gold;
+		color: $red;
+	}
 }
