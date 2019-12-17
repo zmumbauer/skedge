@@ -18,7 +18,7 @@ class SwapRequestsController < ApplicationController
     @swap_request.requesting_user_id = current_user.id
     
 
-    if @swap_request.save!
+    if @swap_request.save
       redirect_to swap_requests_path, success: "Swap request submitted"
     else
       redirect_to timeperiod_path(Timeperiod.find(@swap_request.timeperiod_id))
@@ -37,7 +37,7 @@ class SwapRequestsController < ApplicationController
 
   def approve
     @shift = Timeperiod.find(@swap_request.timeperiod_id)
-    if @shift.update(user_id: @swap_request.fulfilling_user_id)
+    if @shift.update!(user_id: @swap_request.fulfilling_user_id)
       begin
         MemberMailer.swap_approved(@swap_request).deliver
       rescue

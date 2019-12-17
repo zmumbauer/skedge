@@ -5,8 +5,7 @@ class OrganizationsController < ApplicationController
     if @organization.save
       redirect_to welcome_path(@organization.id)
     else
-      render 'static_pages/landing_page'
-      flash[:danger]= "Oh no! Something went wrong."
+      render 'static_pages/landing_page', danger: "Something went wrong"
     end
   end
 

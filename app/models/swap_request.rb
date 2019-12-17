@@ -2,7 +2,7 @@ class SwapRequest < ApplicationRecord
   validates_presence_of :requesting_user_id, :timeperiod_id
   validate :valid_swap
   validates :timeperiod_id, uniqueness: true
-  enum status: { submitted: 0, waiting_approval: 1, approved: 2 }
+  enum status: { submitted: 0, waiting_approval: 1 }
   belongs_to :organization
 
   # Define pick-up-shift method
