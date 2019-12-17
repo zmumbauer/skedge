@@ -10,24 +10,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
       @token = OrganizationToken.find_by(token: params[:invite_token])
       if @token.valid?
         @organization = Organization.find(@token.organization_id)
-        params[:organization_id] = @organization.id
+        session[:organization_id] = @organization.id
       else
         redirect_to root_path, danger: "Token has expired, ask your manager to reinvite you."
         return
       end
     elsif params[:organization_id]
-     @organization = Organization.find(params[:organization_id])
-   else
-    redirect_to root_path, danger: "Something went wrong"
-    return
-  end
+      session[:organization_id] = params[:organization_id]
+      @organization = Organization.find(params[:organization_id])
+    else
+      redirect_to root_path, danger: "Something went wrong"
+      return
+    end
 
-  super
-end
+    super
+  end
 
   # POST /resource
   def create
-    @organization = Organization.find(params[:user][:organization_id])
+    @organization = Organization.find(session[:organization_id])
     super
     OrganizationToken.find_by_email(resource.email).expire if !OrganizationToken.find_by_email(resource.email).nil?
     if @organization.members.count == 1

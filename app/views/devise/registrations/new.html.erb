@@ -40,10 +40,10 @@
 
     <div class="field">
       <%= f.label :phone_number %><br />
-      <%= f.telephone_field :phone_number, autocomplete: "phone" %>
+      <%= f.telephone_field :phone_number, autocomplete: "phone", placeholder: "What's a good number to reach you? Please use the format XXX-XXX-XXXX." %>
     </div>
 
-    <%= f.hidden_field :organization_id, value: params[:organization_id] %>
+    <%= f.hidden_field :organization_id, value: session[:organization_id] %>
 
     <div class="actions">
       <%= f.submit "Sign up", class: 'primary-button' %>
