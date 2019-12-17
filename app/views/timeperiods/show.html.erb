@@ -2,7 +2,7 @@
   <div class="padded-container">
     <div class="heading"><%= @timeperiod.start_time.strftime("%b %e") %></div>
     <div class="heading"><%= @timeperiod.start_time.strftime("%l:%M%P") %> — <%= @timeperiod.end_time.strftime("%l:%M%P") %></div>
-    <% if @timeperiod.user_id == current_user.id %>
+    <% if @timeperiod.user_id == current_user.id && SwapRequest.find_by(timeperiod_id: @timeperiod.id).nil? %>
     <%= form_for @swap_request do |f| %>
     <%= render 'site_wide_partials/error_container', errors: @swap_request.errors.full_messages %>
     <%= f.hidden_field :timeperiod_id, value: params[:id] %>

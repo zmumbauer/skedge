@@ -28,23 +28,28 @@ class SwapRequestsController < ApplicationController
   def claim_shift
     if @swap_request.update(fulfilling_user_id: current_user.id, status: 1)
       redirect_to swap_request_path(@swap_request), success: "You have claimed this shift"
+      return
     else  
       redirect_to swap_request_path(@swap_request), danger: "Could not claim shift"
+      return
     end
   end
 
   def approve
     @shift = Timeperiod.find(@swap_request.timeperiod_id)
     if @shift.update(user_id: @swap_request.fulfilling_user_id)
-      @swap_request.delete
       begin
         MemberMailer.swap_approved(@swap_request).deliver
       rescue
         redirect_to timeperiod_path(@shift), danger: "Email could not be sent"
+        return
       end
+      @swap_request.delete
       redirect_to timeperiod_path(@shift), success: "Swap was approved"
+      return
     else
       redirect_to swap_request_path(@swap_request), danger: "Could not approve swap"
+      return
     end
   end
 

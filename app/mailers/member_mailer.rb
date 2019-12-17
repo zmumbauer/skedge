@@ -13,6 +13,6 @@ class MemberMailer < ApplicationMailer
     @fulfilling_user = User.find(swap_request.fulfilling_user_id)
     @requesting_user = User.find(swap_request.requesting_user_id)
 
-    mail(to: @requesting_user.email, subject: "You are no longer working #{@shift.start_date.strftime("%b %e")+ " " + "#{Timeperiod.find(@swap_request.timeperiod_id).start_time.strftime("%l:%M%P")}" + " to " + "#{Timeperiod.find(@swap_request.timeperiod_id).end_time.strftime("%l:%M%P")}"}")
+    mail(to: @requesting_user.email, subject: "You are no longer working #{@shift.start_time.strftime("%b %e")+ " " + "#{Timeperiod.find(swap_request.timeperiod_id).start_time.strftime("%l:%M%P")}" + " to " + "#{Timeperiod.find(swap_request.timeperiod_id).end_time.strftime("%l:%M%P")}"}")
   end
 end

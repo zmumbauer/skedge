@@ -29,7 +29,7 @@
     <td height="20" style="font-size:10px; line-height:10px;" class="mobileOn">&nbsp;</td>
     <tr>
       <td align="center" valign="top" style="font-family: 'Comfortaa', sans-serif; font-size: 16px;">
-        <%= @fulfilling_user.full_name %> has claimed your shift on <%= @shift.start_date.strftime("%b %e")+ " " + "#{Timeperiod.find(@swap_request.timeperiod_id).start_time.strftime("%l:%M%P")}" + " to " + "#{Timeperiod.find(@swap_request.timeperiod_id).end_time.strftime("%l:%M%P")}" %>
+        <%= @fulfilling_user.full_name %> has claimed your shift on <%= @shift.start_time.strftime("%b %e")+ " " + "#{@shift.start_time.strftime("%l:%M%P")}" + " to " + "#{@shift.end_time.strftime("%l:%M%P")}" %>
       </td>
     </tr>
     <td height="20" style="font-size:10px; line-height:10px;" class="mobileOn">&nbsp;</td>
@@ -45,7 +45,3 @@
 
 </body>
 </html>
-
-
-ap_request.requesting_user_id).full_name %></div>
-    <div class="body"><%= Timeperiod.find(@swap_request.timeperiod_id).start_time.strftime("%b %e")+ " " + "#{Timeperiod.find(@swap_request.timeperiod_id).start_time.strftime("%l:%M%P")}" + " to " + "#{Timeperiod.find(@swap_request.timeperiod_id).end_time.strftime("%l:%M%P")}" %></div>
