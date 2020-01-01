@@ -30,5 +30,7 @@ a {
 		cursor: pointer;
 		font-style: italic;
 		text-decoration: none;
+	} &.no-effect:hover {
+		font-style: normal;
 	}
 }

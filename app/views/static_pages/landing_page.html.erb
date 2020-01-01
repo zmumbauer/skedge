@@ -1,7 +1,19 @@
 <div class="page-container">
-  <div class="padded-container tertiary inverse">
-    <div class="heading center">Skedge</div>
+  <div class="padded-container secondary inverse">
+    <%= image_tag 'logo.svg', width: 350, class: 'center' %>
     <div class="sub-heading center">The best scheduling utility. Period.</div>
+  </div>
+  <div class="side-by-side">
+    <div class="primary">
+      <div class="heading">New here?</div>
+      <div class="sub-heading">Join below</div>
+      <div class="body">Simply use the form below to create your business profile</div>
+    </div>
+    <%= link_to new_user_session_path, class: 'tertiary inverse no-effect' do %>
+    <div class="heading">Already registered?</div>
+    <div class="sub-heading">Click here</div>
+    <div class="body">To sign into your existing account</div>
+    <% end %>
   </div>
   <div class="padded-container secondary">
     <div class="heading">Let's get to know your organization</div>
@@ -9,7 +21,7 @@
     <%= render 'site_wide_partials/error_container', errors: @organization.errors.full_messages %>
     <div class="field">
       <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true, placeholder: "Joe's Donuts" %>
+      <%= f.text_field :name, placeholder: "Joe's Donuts" %>
     </div>
 
     <div class="field">

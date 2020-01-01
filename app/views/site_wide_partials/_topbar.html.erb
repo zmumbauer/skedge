@@ -6,9 +6,6 @@
     <% end %>
     <div class="nav-left">
       <% if !current_user %>
-      <%= link_to 'Home', root_path, class: 'nav-item' %>
-      <%= link_to 'About', root_path, class: 'nav-item' %>
-      <%= link_to 'Contact', root_path, class: 'nav-item' %>
       <% elsif logged_in?(:business_manager) %>
       <%= link_to 'Organization', edit_organization_path(current_user.organization), class: 'nav-item' %>
       <%= link_to 'Manage members', members_path, class: 'nav-item' %>
