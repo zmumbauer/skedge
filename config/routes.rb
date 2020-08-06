@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'static_pages#landing_page'
   get 'home', to: 'static_pages#home'
   get 'typo_sample', to: 'static_pages#typography_sample'
+  get 'schedule', to: 'schedule_view#schedule'
 
   resources :organizations, only: [ :create, :update, :edit ]
   resources :organization_tokens, only: [ :create, :destroy ]

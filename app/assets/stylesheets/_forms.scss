@@ -5,12 +5,13 @@
 		text-transform: lowercase;
 		font-variant: small-caps;
 		margin-bottom: 0px;
+		margin-left: 20px;
 	} input, input[type='text'], input[type='email'], input[type='password'], input[type='tel'] {
 		border: none;
 		background-color: $white;
 		background-image: none !important;
 		border-radius: 20px;
-		color: $red;
+		color: $grey;
 		padding: 20px;
 		width: 100%;
 		outline: none;

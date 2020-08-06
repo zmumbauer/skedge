@@ -30,3 +30,11 @@
 	padding: 20px;
 	margin-bottom: 20px;
 }
+
+@media screen and (max-width: 1200px) {
+	.side-by-side {
+		& > div, & > a {
+			
+		}
+	}
+}
