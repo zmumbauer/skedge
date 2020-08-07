@@ -5,4 +5,4 @@ This is a simple scheduling app I made for a project in college. It is a Ruby on
 
 
 ## Example
-You can find a live version of the app [here](goskedge.com)
+You can find a live version of the app [here](www.goskedge.com)
