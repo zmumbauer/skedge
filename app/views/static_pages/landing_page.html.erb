@@ -9,13 +9,13 @@
       <div class="sub-heading">Join below</div>
       <div class="body">Simply use the form below to create your business profile</div>
     </div>
-    <%= link_to new_user_session_path, class: 'tertiary inverse no-effect' do %>
+    <%= link_to new_user_session_path, class: 'secondary no-effect' do %>
     <div class="heading">Already registered?</div>
     <div class="sub-heading">Click here</div>
     <div class="body">To sign into your existing account</div>
     <% end %>
   </div>
-  <div class="padded-container secondary">
+  <div class="padded-container tertiary inverse">
     <div class="heading">Let's get to know your organization</div>
     <%= form_for @organization do |f| %>
     <%= render 'site_wide_partials/error_container', errors: @organization.errors.full_messages %>
