@@ -6,3 +6,7 @@ This is a simple scheduling app I made for a project in college. It is a Ruby on
 
 ## Example
 You can find a live version of the app [here](http://www.goskedge.com)
+
+## Notes
+
+Unfortunately, while the app is functional, a key component to adding users to your organization is through a 'magic-link' delivered by email. I don't have the funds to purchase a transactional email service for the demo, so the invitation email will not be delivered.
