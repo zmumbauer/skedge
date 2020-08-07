@@ -1,24 +1,8 @@
-# README
+# Skedge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+This is a simple scheduling app I made for a project in college. It is a Ruby on Rails app using Rails 6.0.1 and Ruby 2.6.5.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Example
+You can find a live version of the app [here](goskedge.com)
