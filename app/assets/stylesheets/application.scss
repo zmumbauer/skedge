@@ -1,12 +1,12 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import './resets';
-@import './colors';
-@import './typography';
-@import './palletes';
-@import './containers';
-@import './topbar';
-@import './main';
-@import './forms';
+@import 'resets';
+@import 'colors';
+@import 'typography';
+@import 'palletes';
+@import 'containers';
+@import 'topbar';
+@import 'main';
+@import 'forms';
 
 body {
 	color: $grey;
