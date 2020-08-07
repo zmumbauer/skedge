@@ -9,4 +9,6 @@ You can find a live version of the app [here](http://www.goskedge.com)
 
 ## Notes
 
-Unfortunately, while the app is functional, a key component to adding users to your organization is through a 'magic-link' delivered by email. I don't have the funds to purchase a transactional email service for the demo, so the invitation email will not be delivered.
+* Unfortunately, while the app is functional, a key component to adding users to your organization is through a 'magic-link' delivered by email. I don't have the funds to purchase a transactional email service for the demo, so the invitation email will not be delivered.
+
+* Since this was for a school project where no front-end was required, this app will not work (well) on mobile devices.
