@@ -72,4 +72,4 @@ gem 'autoprefixer-rails', '~> 9.7', '>= 9.7.3'
 gem 'validates_overlap', '~> 1.0'
 
 # API CALLS
-gem 'httparty', '~> 0.18.0'
+gem 'httparty', '~> 0.21.0'
